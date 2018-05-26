@@ -26,11 +26,7 @@ public class ManagementActivity extends AppCompatActivity {
         listView  = (ListView) findViewById(R.id.listView);
         userList = new ArrayList<User>();
 
-        userList.add( new User("홍길동", "홍길동", "홍길동", "20"));
-        userList.add( new User("이창현", "이창현", "이창현", "11"));
-        userList.add( new User("이서현", "이서현", "이서현", "9"));
-
-        adapter = new UserListAdapter(getApplicationContext(), userList);
+        adapter = new UserListAdapter(getApplicationContext(), userList, this);
         listView.setAdapter(adapter);
 
         try {
@@ -45,8 +41,12 @@ public class ManagementActivity extends AppCompatActivity {
                 userName = object.getString("userName");
                 userAge = object.getString("userAge");
                 User user = new User(userId, userPassword, userName, userAge);
-                userList.add(user);
-                count++;
+                if(!userId.equals("admin"))
+                {
+                    userList.add(user);
+                    count++;
+                }
+
             }
 
         } catch( Exception e) {
