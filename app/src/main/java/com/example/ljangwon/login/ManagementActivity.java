@@ -44,8 +44,8 @@ public class ManagementActivity extends AppCompatActivity {
                 if(!userId.equals("admin"))
                 {
                     userList.add(user);
-                    count++;
                 }
+                count++;
 
             }
 
