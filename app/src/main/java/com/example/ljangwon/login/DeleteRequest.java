@@ -16,7 +16,6 @@ public class DeleteRequest extends StringRequest {
         super(Request.Method.POST, URL, listener, null);
         parameters = new HashMap<>();
         parameters.put("userId", userId);
-
     }
 
     public Map<String, String> getParams() {

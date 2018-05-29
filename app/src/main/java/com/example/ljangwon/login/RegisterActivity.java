@@ -47,7 +47,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String userPassword = passwordText.getText().toString();
                 String userName = nameText.getText().toString();
                 String userAge = ageText.getText().toString();
-                //int userAge = Integer.parseInt(ageText.getText().toString());
 
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
 
@@ -64,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         .setPositiveButton("확인",null)
                                         .create()
                                         .show();
-                                finish();
+                                //finish();
                             }
                             else
                             {
